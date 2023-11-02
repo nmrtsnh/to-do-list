@@ -70,8 +70,12 @@ h1 {
   padding-right: 15px; */
 }
 
+.task-img {
+  width: 20%;
+}
+
 .history-img {
-  width: 10%;
+  width: 20%;
 }
 
 .main-app {
@@ -93,10 +97,6 @@ h1 {
   display: flex;
   align-items: center;
   justify-items: center;
-}
-
-.task-img {
-  width: 10%;
 }
 
 .main {
@@ -243,24 +243,24 @@ input[type="checkbox"] {
   font-size: 1.5rem;
 }
 
-.yes-btn {
-  background: none;
-  border: none;
-  background-color: red;
-  padding: 1rem 2rem;
-  border-radius: 5px;
-
-  margin-left: 12rem;
-}
-
+.yes-btn,
 .no-btn {
   background: none;
   border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.yes-btn {
+  background-color: red;
+  padding: 1rem 2rem;
+  margin-left: 2rem;
+}
+
+.no-btn {
   background-color: green;
   padding: 1rem 3rem;
-  border-radius: 5px;
-
-  margin-left: 2rem;
+  margin-left: 12rem;
 }
 
 @media (max-width: 768px) {
@@ -346,11 +346,31 @@ input[type="checkbox"] {
     margin-left: 1rem;
   }
 }
+
+.blurred {
+  filter: blur(2px) opacity(40%);
+}
+
+.task-bar.active {
+  color: #862e9c;
+}
+
+.history-bar.active {
+  color: #862e9c;
+}
+
 /* Media query for smaller devices like smartphones */
 
-@media (max-width: 480px) {
+@media (max-width: 920px) {
+  .heading {
+    display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+  }
+
   .heading img {
-    width: 30%;
+    width: 15%;
   }
 
   h1 {
@@ -360,16 +380,44 @@ input[type="checkbox"] {
   .text {
     padding: 0.5rem;
   }
+  .main-app {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  .sidebar {
+    display: flex;
+
+    gap: 5rem;
+    margin-left: 0;
+  }
+
+  .task-bar {
+    padding-top: 20px;
+  }
+
+  .task-img {
+    width: 50%;
+  }
+
+  .history-img {
+    width: 8%;
+  }
+
+  .confirmation-modal {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+  .confirmation-btn {
+    display: flex;
+  }
 
   .form-section input,
   .form-section select {
     width: 100%;
     padding: 1.2rem;
-  }
-
-  .task-img,
-  .history-img {
-    width: 20%;
   }
 
   .tasks-section {
@@ -400,20 +448,14 @@ input[type="checkbox"] {
     margin-bottom: 2rem;
     margin-right: 0;
   }
-
-  .clear {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .yes-btn,
-  .no-btn {
-    font-size: 1.3rem;
-    padding: 0.8rem 1.5rem;
-    margin-left: 1rem;
-  }
 }
 
-.blurred {
-  filter: blur(2px) opacity(40%);
+@media (max-width: 500px) {
+  .heading {
+    display: flex;
+    flex-direction: row;
+  }
+  .history-img {
+    width: 30%;
+  }
 }
