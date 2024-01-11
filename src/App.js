@@ -38,7 +38,7 @@ export default function App() {
     const todoWithId = { ...newTodo, id: uuidv4(), done: false };
     const updatedTodos = [...todos, todoWithId];
     setTodos(updatedTodos);
-    localStorage.setItem("todo", JSON.stringify(updatedTodos));
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
   }
 
   function handleDeleteTask(id) {
@@ -46,7 +46,6 @@ export default function App() {
   }
 
   function handleToggleTask(id, show) {
-    // setShowTasks(show);
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo

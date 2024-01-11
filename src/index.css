@@ -354,7 +354,7 @@ input[type="checkbox"] {
 }
 
 .blurred {
-  filter: blur(2px) opacity(40%);
+  filter: blur(2px) opacity(0.4);
 }
 
 .task-bar.active {
